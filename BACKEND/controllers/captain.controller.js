@@ -10,7 +10,7 @@ module.exports.registerCaptain = async (req,res,next)=>{
     }
 
     const {fullName, email, password,vehicle} = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     let captain;    
     try {
         const hashedPassword = await captainModel.hashPassword(password);

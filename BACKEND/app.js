@@ -4,6 +4,9 @@ dotenv.config();
 const express = require("express");
 const app = express();
 
+const path = require("path");
+const _dirname = path.resolve();
+
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 
@@ -26,6 +29,11 @@ app.use("/maps", mapsRoutes);
 
 const rideRoutes = require('./routes/ride.routes');
 app.use('/rides',rideRoutes);
+
+app.use(express.static(path.join(_dirname,"/FRONTEND/dist")));
+app.use((_, res) => {
+    res.sendFile(path.resolve(_dirname, "FRONTEND", "dist", "index.html"));
+});
 
 
 module.exports = app;
