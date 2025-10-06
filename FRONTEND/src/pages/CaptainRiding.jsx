@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useRef , useState} from "react";
-import FinishRide from "../components/FinishRIde";
+import FinishRide from "../components/FinishRide";
 
 const CaptainRiding = () => {
     const finishRideRef = useRef(null);
