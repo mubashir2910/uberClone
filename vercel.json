@@ -1,23 +1,23 @@
 {
   "version": 2,
   "builds": [
-    { 
-      "src": "BACKEND/app.js", 
-      "use": "@vercel/node" 
+    {
+      "src": "BACKEND/server.js",
+      "use": "@vercel/node"
     },
-    { 
-      "src": "FRONTEND/package.json", 
+    {
+      "src": "FRONTEND/package.json",
       "use": "@vercel/static-build",
-      "config": { 
-        "distDir": "dist"
-      } 
+      "config": {
+        "distDir": "FRONTEND/dist"
+      }
     }
   ],
   "routes": [
-    { "src": "/api/users/(.*)", "dest": "/BACKEND/app.js" },
-    { "src": "/api/captains/(.*)", "dest": "/BACKEND/app.js" },
-    { "src": "/api/rides/(.*)", "dest": "/BACKEND/app.js" },
-    { "src": "/api/maps/(.*)", "dest": "/BACKEND/app.js" },
-    { "src": "/(.*)", "dest": "/FRONTEND/dist/$1" }
+    { "src": "/users/(.*)", "dest": "BACKEND/server.js" },
+    { "src": "/captains/(.*)", "dest": "BACKEND/server.js" },
+    { "src": "/rides/(.*)", "dest": "BACKEND/server.js" },
+    { "src": "/maps/(.*)", "dest": "BACKEND/server.js" },
+    { "src": "/(.*)", "dest": "FRONTEND/dist/$1" }
   ]
 }
