@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "npx nodemon BACKEND/server.js",
-    "build": "npm run build --prefix FRONTEND",
+    "build": "npm install && npm install --prefix FRONTEND && npm run build --prefix FRONTEND",
     "start": "npx nodemon BACKEND/server.js"
   },
   "keywords": [],
