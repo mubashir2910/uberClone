@@ -1,5 +1,14 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "FRONTEND/dist",
-  "framework": "vite"
+  "version": 2,
+  "builds": [
+    { "src": "BACKEND/app.js", "use": "@vercel/node" },
+    { "src": "FRONTEND/package.json", "use": "@vercel/static-build", "config": { "distDir": "FRONTEND/dist" } }
+  ],
+  "routes": [
+    { "src": "/users/(.*)", "dest": "BACKEND/app.js" },
+    { "src": "/captains/(.*)", "dest": "BACKEND/app.js" },
+    { "src": "/rides/(.*)", "dest": "BACKEND/app.js" },
+    { "src": "/maps/(.*)", "dest": "BACKEND/app.js" },
+    { "src": "/(.*)", "dest": "FRONTEND/dist/$1" }
+  ]
 }
