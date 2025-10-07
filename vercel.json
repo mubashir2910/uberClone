@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     { 
-      "src": "BACKEND/app.js", 
+      "src": "BACKEND/server.js", 
       "use": "@vercel/node" 
     },
     { 
@@ -14,10 +14,10 @@
     }
   ],
   "routes": [
-    { "src": "/api/users/(.*)", "dest": "/BACKEND/app.js" },
-    { "src": "/api/captains/(.*)", "dest": "/BACKEND/app.js" },
-    { "src": "/api/rides/(.*)", "dest": "/BACKEND/app.js" },
-    { "src": "/api/maps/(.*)", "dest": "/BACKEND/app.js" },
+    { "src": "/api/users/(.*)", "dest": "/BACKEND/server.js" },
+    { "src": "/api/captains/(.*)", "dest": "/BACKEND/server.js" },
+    { "src": "/api/rides/(.*)", "dest": "/BACKEND/server.js" },
+    { "src": "/api/maps/(.*)", "dest": "/BACKEND/server.js" },
     { "src": "/(.*)", "dest": "/FRONTEND/dist/$1" }
   ]
 }
