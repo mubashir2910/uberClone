@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { Link } from 'react-router-dom';
-import { useContext, useRef, useState } from 'react';
+import {  useRef, useState } from 'react';
 import CaptainDetails from '../components/CaptainDetails';
 import RidePopUp from '../components/RidePopUp';
 import ConfirmRidePopUp from '../components/ConfirmRidePopUp';
